@@ -1,7 +1,7 @@
 # On the Geometry of Rectifier Convolutional Neural Networks
 Describing the preimage of Conv+ReLU layers in terms of polytopes arrangements.
 
-Recent work [1 ] describes the preimage of convolutional layers with ReLU activations in terms of polytopes in the preactivation space of the layer. When considering individual channels of convolutional kernels, the activation of each kernel can be described by mutual arrangements of polyhedral cones in the preimage space, with apices on the identity line.
+Recent work [1](https://arxiv.org/abs/1905.08922) describes the preimage of convolutional layers with ReLU activations in terms of polytopes in the preactivation space of the layer. When considering individual channels of convolutional kernels, the activation of each kernel can be described by mutual arrangements of polyhedral cones in the preimage space, with apices on the identity line.
 
 The present code allows to train convolutional networks on CIFAR-10 and MNIST and then compute the discrete and continuous statistics that describe the polytope arrangements for each pair of stacked convolutional layers.
 
@@ -9,7 +9,7 @@ The present code allows to train convolutional networks on CIFAR-10 and MNIST an
 
 To restrict the study to the affine arrangement of polyhedral cones and make our theory as tight as possible, convolutional layers are implemented by swapping the order of cross-channel correlation and ReLU activation: 
 
-![equation](https://latex.codecogs.com/svg.latex?%5Cbegin%7Bmultline%7D%20%5Clabel%7Beq%3Acustom-conv%7D%20%5Ctilde%7B%5Cmathcal%7BO%7D%7D%28o%2Ci%2Cj%29%20%3D%20%5C%5C%20b_o%20&plus;%20%5Csum%5Climits_%7Bc%20%3D%200%7D%5E%7Bn_%7B%5Ctext%7Bin%7D%7D%20-1%7D%20%5Cvarphi%20%5CBig%28%5Csum%5Climits_%7Bm%20%3D%200%7D%5E%7Bk%20-1%7D%20%5Csum%5Climits_%7Bn%20%3D%200%7D%5E%7Bk%20-1%7D%20%5Cmathcal%7BX%7D%28c%2C%20i&plus;m%2C%20j&plus;n%29%20%5Ccdot%20%5Cmathcal%7BW%7D_o%28c%2C%20m%2C%20n%29%5CBig%29%20%5C%5C%20%5Ctext%7Bfor%7D%20%5Cquad%20i%20%3D%200%2C%20%5Cldots%2C%20r%20-1%20%5Cquad%20%5Ctext%7Band%7D%20%5Cquad%20j%20%3D%200%2C%20%5Cldots%2C%20r%20-1%20%5Cend%7Bmultline%7D)
+![equation](https://latex.codecogs.com/svg.latex?%5Ctilde%7B%5Cmathcal%7BO%7D%7D%28o%2Ci%2Cj%29%20%3D%20b_o%20&plus;%20%5Csum%5Climits_%7Bc%20%3D%200%7D%5E%7Bn_%7B%5Ctext%7Bin%7D%7D%20-1%7D%20%5Cvarphi%20%5CBig%28%5Csum%5Climits_%7Bm%20%3D%200%7D%5E%7Bk%20-1%7D%20%5Csum%5Climits_%7Bn%20%3D%200%7D%5E%7Bk%20-1%7D%20%5Cmathcal%7BX%7D%28c%2C%20i&plus;m%2C%20j&plus;n%29%20%5Ccdot%20%5Cmathcal%7BW%7D_o%28c%2C%20m%2C%20n%29%5CBig%29%20%5C%5C%20%5Ctext%7Bfor%7D%20%5Cquad%20i%20%3D%200%2C%20%5Cldots%2C%20r%20-1%20%5Cquad%20%5Ctext%7Band%7D%20%5Cquad%20j%20%3D%200%2C%20%5Cldots%2C%20r%20-1)
 
 This allows to investigate for any bias arising from the optimization process in the arrangement of cones. All models that include the special convolutional layers are denoted ```Student_$arch``` where ```arch``` is one of the state of the art convolutional architectures. The list of supported models is defined in ```models.py``` and can be accessed by running ```train.py``` without the ```--arch``` option.
 
