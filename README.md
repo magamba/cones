@@ -1,7 +1,7 @@
 # On the Geometry of Rectifier Convolutional Neural Networks
 Describing the preimage of Conv+ReLU layers in terms of polytopes arrangements.
 
-Recent work `[`[1](https://arxiv.org/abs/1905.08922)`]` describes the preimage of convolutional layers with ReLU activations in terms of polytopes in the preactivation space of the layer. When considering individual channels of convolutional kernels, the activation of each kernel can be described by mutual arrangements of polyhedral cones in the preimage space, with apices on the identity line.
+Recent work [\[1\]](https://arxiv.org/abs/1905.08922) describes the preimage of convolutional layers with ReLU activations in terms of polytopes in the preactivation space of the layer. When considering individual channels of convolutional kernels, the activation of each kernel can be described by mutual arrangements of polyhedral cones in the preimage space, with apices on the identity line.
 
 The present code allows to train convolutional networks on CIFAR-10 and MNIST and then compute the discrete and continuous statistics that describe the polytope arrangements for each pair of stacked convolutional layers.
 
